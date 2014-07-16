@@ -1,0 +1,33 @@
+## THIS FILE MANAGED VIA PUPPET
+uid <%= @nslcd_user %>
+gid <%= @nslcd_group %>
+uri <%= @uri %>
+<% if @ssl -%>
+ssl yes
+ssl_cert <%= @ssl_cert %>
+<%else -%>
+ssl no
+<%end -%>
+<% if @tls_reqcert -%>
+TLS_REQCERT <%= @tls_reqcert %>
+<%end -%>
+<% if @tls_checkpeer -%>
+tls_checkpeer <%= @tls_checkpeer %>
+<%end -%>
+base <%= @base %>
+<% if @base_netgroup -%>
+base netgroup <%= @base_netgroup %>
+<%end -%>
+ldap_version <%= @ldap_version %>
+<% if @filter_passwd -%>
+filter passwd <%= @filter_passwd %>
+<%end -%>
+<% if @filter_shadow -%>
+filter shadow <%= @filter_shadow %>
+<%end -%>
+<% if @filter_group -%>
+filter group <%= @filter_group %>
+<%end -%>
+<% if @filter_netgroup -%>
+filter netgroup <%= @filter_netgroup %>
+<%end -%>
